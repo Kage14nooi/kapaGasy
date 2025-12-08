@@ -1,0 +1,115 @@
+{
+  "sandals": [
+    {
+      "id": "1",
+      "name": "Minimal Comfort - Women",
+      "category": "women",
+      "price": 129,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Sandales pour femmes à design minimaliste combinant élégance et confort. Parfaites pour le quotidien ou les sorties.",
+      "materials": ["Cuir premium", "Semelle ergonomique", "Lanière ajustable"],
+      "badge": "bestseller",
+      "sizes": ["36", "37", "38", "39", "40", "41"],
+      "featured": true
+    },
+    {
+      "id": "2",
+      "name": "Urban Explorer - Men",
+      "category": "men",
+      "price": 145,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Sandales pour hommes alliant robustesse et style contemporain. Idéales pour l'aventure.",
+      "materials": [
+        "Cuir véritable",
+        "Technologie anti-choc",
+        "Doublure confortable"
+      ],
+      "badge": "new",
+      "sizes": ["40", "41", "42", "43", "44", "45", "46"],
+      "featured": true
+    },
+    {
+      "id": "3",
+      "name": "Joy Steps - Kids",
+      "category": "children",
+      "price": 69,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Sandales pour enfants sûres, confortables et colorées. Parfaites pour l'été.",
+      "materials": [
+        "Matériaux hypoallergéniques",
+        "Semelle antidérapante",
+        "Sangle de sécurité"
+      ],
+      "badge": "premium",
+      "sizes": ["28", "29", "30", "31", "32", "33", "34", "35"],
+      "featured": true
+    },
+    {
+      "id": "4",
+      "name": "Heritage Classic - Women",
+      "category": "women",
+      "price": 159,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Collection limitée inspirée par l'artisanat traditionnel. Chaque paire est unique.",
+      "materials": [
+        "Cuir vieilli",
+        "Couture à la main",
+        "Finitions naturelles"
+      ],
+      "badge": "premium",
+      "sizes": ["36", "37", "38", "39", "40", "41"],
+      "featured": false
+    },
+    {
+      "id": "5",
+      "name": "Sport Dynamics - Men",
+      "category": "men",
+      "price": 135,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Sandales de sport haute performance avec technologie d'absorption de chocs.",
+      "materials": [
+        "Technologie Shock Guard",
+        "Maille respirante",
+        "Grip renforcé"
+      ],
+      "badge": "new",
+      "sizes": ["40", "41", "42", "43", "44", "45", "46"],
+      "featured": false
+    },
+    {
+      "id": "6",
+      "name": "Rainbow Comfort - Kids",
+      "category": "children",
+      "price": 59,
+      "images": [
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500",
+        "/placeholder.svg?height=500&width=500"
+      ],
+      "description": "Sandales pour enfants colorées avec designs amusants. Confort et style combinés.",
+      "materials": ["PU écologique", "Semelle flexible", "Ceinture ajustable"],
+      "sizes": ["26", "27", "28", "29", "30", "31", "32"],
+      "featured": false
+    }
+  ]
+}

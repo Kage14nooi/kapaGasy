@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "author": "Marie Dupont",
+    "role": "Cliente depuis 2020",
+    "image": "/placeholder.svg?height=100&width=100",
+    "text": "Les sandales sont exceptionnelles en qualité. Après 2 ans d'utilisation quotidienne, elles sont toujours comme neuves. Le confort est incomparable.",
+    "rating": 5
+  },
+  {
+    "id": "2",
+    "author": "Jean Martin",
+    "role": "Boutique Paris",
+    "image": "/placeholder.svg?height=100&width=100",
+    "text": "Nous recommandons ces sandales à tous nos clients. Le rapport qualité-prix est imbattable et le service client est impeccable.",
+    "rating": 5
+  },
+  {
+    "id": "3",
+    "author": "Sophie Bernard",
+    "role": "Mère de 3 enfants",
+    "image": "/placeholder.svg?height=100&width=100",
+    "text": "Mes enfants adoooorent leurs sandales. Colorées, confortables et durables. Elles survivent à tous les jeux !",
+    "rating": 5
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sandals",
+  "info": {
+    "singularName": "sandal",
+    "pluralName": "sandals",
+    "displayName": "sandal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "men",
+        "women",
+        "children"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "materials": {
+      "type": "json"
+    },
+    "badge": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "bestseller",
+        "premium",
+        " promo"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sizes": {
+      "type": "json"
+    }
+  }
+}
