@@ -71,8 +71,8 @@ const ImageModal = ({ src, alt, onClose }: ModalProps) => {
 
 // --- Composant Principal : ArtisanPage ---
 
-// const API_BASE_URL = "http://localhost:1337";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
+const API_BASE_URL = "http://localhost:1337";
+// const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
 
 export default function ArtisanPage() {
   const [artisan, setArtisan] = useState<ArtisanData | null>(null);
