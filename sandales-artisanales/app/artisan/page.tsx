@@ -33,7 +33,7 @@ interface ModalProps {
   onClose: () => void;
 }
 function renderBio(blocks: any[] | string) {
-  if (typeof blocks === "string") return blocks; // fallback string
+  if (typeof blocks === "string") return blocks; // retourne la string telle quelle
   return blocks
     .map((block) => block.children?.map((c: any) => c.text).join("") || "")
     .join("\n\n");
@@ -243,6 +243,7 @@ export default function ArtisanPage() {
             >
               {artisanData.bio ? renderBio(artisanData.bio) : ""}
             </p>
+
             <p
               className="text-lg font-medium leading-relaxed"
               style={{
