@@ -1,21 +1,21 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:1337/api";
+// Utilisation de la variable d'environnement
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: `${API_URL}/api`,
 });
 
 // Service pour récupérer toutes les sandales
 export const getSandales = async () => {
   const res = await api.get("/sandals?populate=images");
-  return res.data.data; // Ceci devrait retourner le format Strapi V4 standard : [{id, attributes: {...}}]
+  return res.data.data; // Format Strapi V4 : [{id, attributes: {...}}]
 };
 
 // Service pour récupérer l’artisan
 export const getArtisan = async () => {
-  // CORRECTION DE LA REQUÊTE : Utilisation de la syntaxe de peuplement Strapi v4 pour plusieurs champs
-  // Assurez-vous que les champs 'photo' et 'gallery' existent sur votre collection 'artisan'
+  console.log("tonga eto");
   const res = await api.get("/artisans", {
     params: {
       "populate[0]": "photo",
@@ -23,18 +23,15 @@ export const getArtisan = async () => {
     },
   });
 
-  // Alternativement, si la syntaxe de base ne fonctionne pas :
-  // const res = await api.get("/artisans?populate=photo&populate=gallery");
-
-  // On retourne le premier élément, comme convenu pour une section "About"
   if (res.data.data && res.data.data.length > 0) {
     return res.data.data[0];
   }
   return null;
 };
+
 // Service pour récupérer les témoignages
 export const getTemoignages = async () => {
-  const res = await api.get("/testimonials?populate=photo"); // On suppose que .data.data contient le tableau d'objets déstructurés
+  const res = await api.get("/testimonials?populate[0]=photo");
   return res.data.data;
 };
 
@@ -47,9 +44,11 @@ export const sendContactMessage = async (payload: {
   const res = await api.post("/contact-messages", { data: payload });
   return res.data;
 };
+
+// Service pour récupérer le hero
 export const getHero = async () => {
   const res = await api.get("/hero?populate=background");
-  return res.data.data[0]; // On prend le premier item
+  return res.data.data[0];
 };
 
 export default api;

@@ -91,7 +91,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <section className="py-24 bg-[#F7F3F0]">
+      <section className="py-10 bg-[#F7F3F0]">
         <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4 text-[#3D3D3D] tracking-wide"

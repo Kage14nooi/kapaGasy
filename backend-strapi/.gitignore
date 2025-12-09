@@ -80,8 +80,8 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-public/uploads/*
-!public/uploads/.gitkeep
+# public/uploads/*
+# !public/uploads/.gitkeep
 .tsbuildinfo
 .eslintcache
 
@@ -142,7 +142,7 @@ yarn-error.log
 dist/
 
 # Strapi uploads (optionnel : à ignorer si tu héberges sur cloud)
-public/uploads/
+# public/uploads/
 
 # Env files
 .env

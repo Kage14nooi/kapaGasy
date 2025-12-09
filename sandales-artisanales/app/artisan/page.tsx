@@ -20,7 +20,7 @@ interface Photo {
 interface ArtisanData {
   id: number;
   name: string;
-  description: string;
+  bio: string;
   photo: Photo | null;
   gallery: Photo[] | null;
 }
@@ -31,6 +31,11 @@ interface ModalProps {
   src: string;
   alt: string;
   onClose: () => void;
+}
+function renderBio(blocks: any[]) {
+  return blocks
+    .map((block) => block.children?.map((c: any) => c.text).join("") || "")
+    .join("\n\n");
 }
 
 const ImageModal = ({ src, alt, onClose }: ModalProps) => {
@@ -65,7 +70,8 @@ const ImageModal = ({ src, alt, onClose }: ModalProps) => {
 
 // --- Composant Principal : ArtisanPage ---
 
-const API_BASE_URL = "http://localhost:1337";
+// const API_BASE_URL = "http://localhost:1337";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
 
 export default function ArtisanPage() {
   const [artisan, setArtisan] = useState<ArtisanData | null>(null);
@@ -136,8 +142,7 @@ export default function ArtisanPage() {
     artisan ||
     ({
       name: "L'Artisan",
-      description:
-        "Passionné par le cuir et les matériaux naturels, notre artisan crée des sandales uniques et confortables, fabriquées à la main avec amour et soin. Chaque paire raconte une histoire et vous garantit qualité et durabilité.",
+      bio: "Passionné par le cuir et les matériaux naturels, notre artisan crée des sandales uniques et confortables, fabriquées à la main avec amour et soin. Chaque paire raconte une histoire et vous garantit qualité et durabilité.",
       photo: null,
       gallery: null,
     } as ArtisanData);
@@ -235,9 +240,8 @@ export default function ArtisanPage() {
                 fontWeight: "300",
               }}
             >
-              {artisanData.description}
+              {artisanData.bio ? renderBio(artisanData.bio) : ""}
             </p>
-
             <p
               className="text-lg font-medium leading-relaxed"
               style={{

@@ -2,7 +2,7 @@ import { Instagram, Facebook, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#8B6F47] text-[#F7F3F0] py-16 mt-32">
+    <footer className="bg-[#8B6F47] text-[#F7F3F0] py-16 mt-15">
       <div className="max-w-7xl mx-auto px-6">
         {/* Newsletter Section */}
         <div className="text-center mb-16 pb-12 border-b border-[#D9C6B0]/30">

@@ -430,10 +430,44 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiArtisanArtisan extends Struct.CollectionTypeSchema {
+  collectionName: 'artisans';
+  info: {
+    displayName: 'artisan';
+    pluralName: 'artisans';
+    singularName: 'artisan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::artisan.artisan'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSandalSandal extends Struct.CollectionTypeSchema {
   collectionName: 'sandals';
   info: {
-    displayName: 'sandal';
+    displayName: 'sandales';
     pluralName: 'sandals';
     singularName: 'sandal';
   };
@@ -441,10 +475,6 @@ export interface ApiSandalSandal extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    badge: Schema.Attribute.Enumeration<
-      ['new', 'bestseller', 'premium', ' promo']
-    >;
-    category: Schema.Attribute.Enumeration<['men', 'women', 'children']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -460,11 +490,13 @@ export interface ApiSandalSandal extends Struct.CollectionTypeSchema {
       'api::sandal.sandal'
     > &
       Schema.Attribute.Private;
-    materials: Schema.Attribute.JSON;
     name: Schema.Attribute.Text;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     sizes: Schema.Attribute.JSON;
+    style: Schema.Attribute.Enumeration<
+      ['Tress\u00E9e', ' Minimaliste', 'Cuir Naturel']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -482,21 +514,20 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    author: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::testimonial.testimonial'
     > &
       Schema.Attribute.Private;
+    message: Schema.Attribute.RichText;
+    name: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     rating: Schema.Attribute.Integer;
-    role: Schema.Attribute.String;
-    text: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1013,6 +1044,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::artisan.artisan': ApiArtisanArtisan;
       'api::sandal.sandal': ApiSandalSandal;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;

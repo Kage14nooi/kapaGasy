@@ -11,13 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "author": {
-      "type": "text"
-    },
-    "role": {
+    "name": {
       "type": "string"
     },
-    "image": {
+    "photo": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -27,7 +24,7 @@
         "audios"
       ]
     },
-    "text": {
+    "message": {
       "type": "richtext"
     },
     "rating": {

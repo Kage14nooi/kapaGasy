@@ -117,7 +117,7 @@ export default function SectionSandales() {
 
   return (
     <>
-      <section id="sandales" className="py-24 bg-[#F7F3F0]">
+      <section id="sandales" className="py-20 bg-[#F7F3F0]">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4 text-center text-[#3D3D3D] tracking-wide"
