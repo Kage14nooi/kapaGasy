@@ -32,7 +32,8 @@ interface ModalProps {
   alt: string;
   onClose: () => void;
 }
-function renderBio(blocks: any[]) {
+function renderBio(blocks: any[] | string) {
+  if (typeof blocks === "string") return blocks; // fallback string
   return blocks
     .map((block) => block.children?.map((c: any) => c.text).join("") || "")
     .join("\n\n");
